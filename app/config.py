@@ -1,3 +1,5 @@
+import os
+import sys
 from pydantic import BaseSettings
 
 class Settings(BaseSettings):
@@ -14,3 +16,6 @@ class Settings(BaseSettings):
     env_file = ".env"
 
 settings = Settings()
+
+parent_dir = os.path.abspath(os.path.join(os.getcwd(), "../alembic"))
+sys.path.append(parent_dir)
